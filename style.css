@@ -1,0 +1,252 @@
+/* styles.css */
+:root {
+    --bg-color: #1a1a2e;
+    --text-color: #ffffff;
+    --accent-color: #6a5acd; /* Soft Purple for Accent */
+    --chat-bg: #16213e; /* Dark Blue for Background */
+    --timestamp-color: #a9a9a9; /* Neutral Gray for Timestamps */
+    --hover-color: #483d8b; /* Deep Purple for Hover Effects */
+    --font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family);
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.app {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 30%;
+    background: var(--chat-bg);
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    background: var(--accent-color);
+    color: #fff;
+    font-weight: bold;
+}
+
+.contacts {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+}
+
+.contact {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #2e3b4e;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+}
+
+.contact:hover,
+.contact.active {
+    background: var(--hover-color);
+}
+
+.contact-info {
+    flex-grow: 1;
+}
+
+.contact-info h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+/* Chat Area */
+.chat {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: var(--accent-color);
+    color: #fff;
+    font-weight: bold;
+}
+
+.chat-header img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+}
+
+.chat-header button {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.chat-body {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    background: var(--chat-bg);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.message {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    max-width: 60%;
+    display: inline-block;
+    position: relative;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.message p {
+    margin: 0;
+}
+
+.message.sent {
+    align-self: flex-end;
+    background: var(--accent-color);
+    color: #fff;
+    font-weight: 500;
+}
+
+.message.received {
+    align-self: flex-start;
+    background: #2e3b4e;
+    color: #fff;
+}
+
+.timestamp {
+    font-size: 0.8rem;
+    color: var(--timestamp-color);
+    margin-top: 0.3rem;
+    text-align: right;
+}
+
+.chat-footer {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background: var(--chat-bg);
+}
+
+.chat-footer input {
+    flex-grow: 1;
+    padding: 0.7rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #2e3b4e;
+    color: #fff;
+}
+
+.chat-footer button {
+    margin-left: 0.5rem;
+    background: var(--accent-color);
+    border: none;
+    border-radius: 5px;
+    padding: 0.7rem;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.chat-footer button:hover {
+    background: var(--hover-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Updated Styles for Emoji Picker and Upload */
+.chat-footer button,
+.chat-footer input[type="file"] {
+    margin-left: 0.5rem;
+    background: var(--accent-color);
+    border: none;
+    border-radius: 5px;
+    padding: 0.7rem;
+    font-size: 1.2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.chat-footer button:hover {
+    background: var(--hover-color);
+}
+
+.message img,
+.message video {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+}
+/* Styles for the GIF Picker */
+#gifContainer {
+    position: absolute;
+    bottom: 60px;
+    left: 10px;
+    right: 10px;
+    background: var(--chat-bg);
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#gifContainer img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#gifContainer.hidden {
+    display: none;
+}

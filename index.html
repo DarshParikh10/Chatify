@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced WhatsApp Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="header">
+                <h2>Chatify</h2>
+            </div>
+            <ul class="contacts">
+                <li class="contact active">
+                    <img src="male1.png" alt="Darsh Parikh">
+                    <div class="contact-info">
+                        <h4>Darsh Parikh</h4>
+                        <p>Hey there! I'm using Chatify.</p>
+                    </div>
+                </li>
+                <li class="contact">
+                    <img src="male2.png" alt="Shivam Patel">
+                    <div class="contact-info">
+                        <h4>Shivam Patel</h4>
+                        <p>Last message...</p>
+                    </div>
+                </li>
+                <li class="contact">
+                    <img src="male3.png" alt="Dvij Parikh">
+                    <div class="contact-info">
+                        <h4>Dvij Parikh</h4>
+                        <p>Last message...</p>
+                    </div>
+                </li>
+                <li class="contact">
+                    <img src="female1.png" alt="Virali Patel">
+                    <div class="contact-info">
+                        <h4>Virali Patel</h4>
+                        <p>Last message...</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Chat Area -->
+        <div class="chat">
+            <div class="chat-header">
+                <img src="male1.png" alt="User">
+                <h3>Darsh Parikh</h3>
+                <button id="themeToggle">🌙</button>
+            </div>
+            <div class="chat-body" id="chatBody">
+                <!-- Example Messages -->
+                <div class="message received">
+                    <p>Hello! How are you?</p>
+                    <span class="timestamp">10:01 AM</span>
+                </div>
+                <div class="message sent">
+                    <p>I'm good, thank you! 😊</p>
+                    <span class="timestamp">10:02 AM</span>
+                </div>
+            </div>
+            <div class="chat-footer">
+                <input type="text" id="messageInput" placeholder="Type a message..." />
+                <button id="emojiPicker">😀</button>
+                <button id="gifPicker">🎥</button>
+                <input type="file" id="mediaInput" accept="image/*,video/*,image/gif" hidden />
+                <button id="uploadButton">📎</button>
+                <button id="sendButton">📩</button>
+            </div>
+            <div id="gifContainer" class="hidden"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
