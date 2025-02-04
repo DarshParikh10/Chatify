@@ -1,4 +1,5 @@
 # Chatify
+
 Chatify is a modern and feature-rich messaging app designed to provide a seamless and engaging communication experience. It supports real-time messaging, emojis, GIF integration, and media sharing in a responsive, visually appealing interface. Built with simplicity and fun in mind, Chatify is perfect for users who want expressive and interactive conversations.
 
 Features
